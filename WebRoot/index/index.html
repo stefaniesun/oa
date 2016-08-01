@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>西藏旅游数据中心</title>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link href="../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../css/css_seller/font-awesome.css" rel="stylesheet"/>
+<link href="../css/css_seller/animate.css" rel="stylesheet"/>
+<link href="../css/css_seller/style.css" rel="stylesheet"/>
+<!-- 全局js -->
+<script type="text/javascript" src="../js/library/jquery-1.7.2.js"></script>	
+<script type="text/javascript" src="../js/library/cookie/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/library/common/cookie.js"></script>
+<script type="text/javascript" src="../js/library/common/common.js"></script>
+</head>
+<body class="fixed-sidebar full-height-layout gray-bg">
+ <div id="wrapper">
+        <!--左侧导航栏-->
+        <!--#include virtual="../index/lefter.html"-->
+        
+         <div id="page-wrapper" class="gray-bg dashbard-1">
+            <!--右侧顶部栏-->
+               <!--#include virtual="../index/header.html"-->
+               
+             <div class="row J_mainContent" id="content-main">
+             	<iframe class="J_iframe">
+             	</iframe>
+             </div>
+         </div>
+   </div>
+ 
+<!-- 全局js -->
+<script type="text/javascript" src="../js/library/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/library/metisMenu/jquery.metisMenu.js"></script>
+<script type="text/javascript" src="../js/library/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src='../js/library/layer/layer.js' ></script>
+<script type="text/javascript"  src="../js/library/hplus.js"></script>
+<script type="text/javascript"  src="../js/library/contabs.js"></script>
+
+<script>
+
+//初始化左边左边菜单栏
+xyzAjax({
+	url:"../LoginWS/decideLogin.do",
+	success:function(data){
+		if(data.status==1){
+			currentUserButtons = data.content.buttonList;
+			var securityFunctionList=data.content.securityFunctionList;
+			var menuItem="";
+			var html="";
+			for(var i=0;i<securityFunctionList.length;i++){
+				if(securityFunctionList[i].isApi==0){
+					if(securityFunctionList[i].groupCn!=menuItem){
+						if(i!=0){
+							html+="</ul>";
+							html+="</li>";
+						}
+						html+="<li>";
+						html+="		<a href='#'><i class='fa fa-user'></i>";
+						html+="		<span class='nav-label'>"+securityFunctionList[i].groupCn+"</span><span class='fa arrow'></span>";
+						html+="		</a>";
+						html+="		<ul class='nav nav-second-level collapse' style='height: 0px;'>";
+						html+="		  <li><a class='J_menuItem' href='"+securityFunctionList[i].url+"' >"+securityFunctionList[i].nameCn+"</a></li>";
+						
+						menuItem=securityFunctionList[i].groupCn;
+					}else{
+						html+="		  <li><a class='J_menuItem' href='"+securityFunctionList[i].url+"' >"+securityFunctionList[i].nameCn+"</a></li>";
+					}
+				}
+			}
+			
+			//$("#homeItem").after(html);
+			
+		}else{
+			layer.alert(data.msg);
+		}
+	}
+});
+
+
+    // 顶部菜单固定
+    $('#fixednavbar').click(function () {
+        if ($('#fixednavbar').is(':checked')) {
+            $(".navbar-static-top").removeClass('navbar-static-top').addClass('navbar-fixed-top');
+            $("body").removeClass('boxed-layout');
+            $("body").addClass('fixed-nav');
+            $('#boxedlayout').prop('checked', false);
+
+            if (localStorageSupport) {
+                localStorage.setItem("boxedlayout",'off');
+            }
+
+            if (localStorageSupport) {
+                localStorage.setItem("fixednavbar",'on');
+            }
+        } else {
+            $(".navbar-fixed-top").removeClass('navbar-fixed-top').addClass('navbar-static-top');
+            $("body").removeClass('fixed-nav');
+
+            if (localStorageSupport) {
+                localStorage.setItem("fixednavbar",'off');
+            }
+        }
+    });
+
+    // 收起左侧菜单
+    $('#collapsemenu').click(function () {
+        if ($('#collapsemenu').is(':checked')) {
+            $("body").addClass('mini-navbar');
+            SmoothlyMenu();
+
+            if (localStorageSupport) {
+                localStorage.setItem("collapse_menu",'on');
+            }
+
+        } else {
+            $("body").removeClass('mini-navbar');
+            SmoothlyMenu();
+
+            if (localStorageSupport) {
+                localStorage.setItem("collapse_menu",'off');
+            }
+        }
+    });
+
+    // 固定宽度
+    $('#boxedlayout').click(function () {
+        if ($('#boxedlayout').is(':checked')) {
+            $("body").addClass('boxed-layout');
+            $('#fixednavbar').prop('checked', false);
+            $(".navbar-fixed-top").removeClass('navbar-fixed-top').addClass('navbar-static-top');
+            $("body").removeClass('fixed-nav');
+            if (localStorageSupport) {
+                localStorage.setItem("fixednavbar",'off');
+            }
+
+
+            if (localStorageSupport) {
+                localStorage.setItem("boxedlayout",'on');
+            }
+        } else {
+            $("body").removeClass('boxed-layout');
+
+            if (localStorageSupport) {
+                localStorage.setItem("boxedlayout",'off');
+            }
+        }
+    });
+    
+</script>
+ 
+</body>
+</html>

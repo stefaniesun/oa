@@ -1,0 +1,188 @@
+/* CSS Document */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td{margin:0; padding:0;}
+body{background:#ffffff; font-family:"宋体"}
+ul,li{list-style:none;}
+a{text-decoration:none;}
+img{border:none;}
+.moudle{margin:0 auto;}
+.fl{float:left}
+.fr{float:right}
+/** Link */
+a:link, a:visited {text-decoration:none;}
+a:hover, a:active {text-decoration:none;}
+/**********************充值****************************/
+.centent_lct{width:961px; min-height:100px; clear:both; padding-top:28px;}
+.lctcz_top{width:auto; height:25px; border:1px solid #e6e6e6; background:#ffffff; line-height:26px; padding:12px; color:#989898; font-size:14px; font-family:"宋体"}
+.lctcz_toble{width:auto; margin-top:13px; border:1px solid #e6e6e6; background:#ffffff;}
+.lctcz_toble .table{width:700px;  margin:25px 0 30px 50px;}
+.lctcz_toble .table td{padding:5px; margin:0px}
+.lctcz_toble .table .td1{width:130px; line-height:30px; text-align:right; font-size:14px; font-family:"宋体"; color:#000000}
+.lctcz_toble .table .td2{width:580px; font-size:12px; line-height:40px; color:#3f3f3f}
+.lctcz_toble .table .a1{width:145px; height:38px; margin-left:5px; line-height:38px; text-align:center; font-size:12px; color:#3f8ed6; background:url(../images/lct_04.jpg) right no-repeat; display:block}
+.lctcz_toble .table .td3{width:510px; min-height:50px; background:url(../images/lct_05.jpg) left top no-repeat; padding-top:15px; margin-top:10px;}
+.lctcz_toble .td3 p{color:#535353; line-height:30px; font-size:12px}
+.lctcz_toble .td3 table{width:510px; border:1px solid #d9e8ff; font-size:12px; color:#4b4b4b; text-align:right}
+.lctcz_toble .td3 table td{width:120px; border-right:1px solid #d9e8ff}
+.mrxe td{background:#f8faff; border-bottom:1px solid #d9e8ff}
+.lctcz_toble input{width:190px; height:35px; border:1px solid #d9e8ff; margin-top:20px}
+.lctcz_toble .table .td2 a{font-size:12px; line-height:40px; color:#3f8ed6}
+.lctcz_toble .table .td2 a:hover{color:#900}
+.lctcz_toble .table .tj{width:105px; height:32px;cursor:pointer; background:url("../../member/image/image.png") no-repeat;background-position: -504px -1px;}
+.lctcz_toble .table .tx{width:105px; height:32px;cursor:pointer; background:url("../../member/image/image.png") no-repeat;background-position: -611px -1px;}
+.lctcz_wt{width:auto; padding:24px 200px 33px 50px; font-family:"宋体"; font-size:12px; color:#8a8a8a; line-height:25px}
+.chl-item {position: relative;zoom: 1;float: left;margin-left:5px;height: 38px;padding: 20px 11px 5px 0;}
+.chl-item label {display: inline-block;position: relative;zoom: 1;width: 130px;height: 36px;border: 1px solid #ddd;background: #fff;}
+.chl-item input {width:20px;height:20px;float: left;margin: 12px 4px 0 0}
+.chl-icon {position: absolute;z-index: 2;left: 0;top: 0;width: 126px;height: 36px;background-repeat: no-repeat;}
+.icon-cashier-ABC, .icon-cashier-ARCU, .icon-cashier-AYCB, .icon-cashier-BANKWF, .icon-cashier-BGB, .icon-cashier-BHB, .icon-cashier-BJBANK, .icon-cashier-BJRCB, .icon-cashier-BOC, .icon-cashier-BOCD, .icon-cashier-BOCFCB, .icon-cashier-BOCY, .icon-cashier-BOD, .icon-cashier-BODD, .icon-cashier-BOHAIB, .icon-cashier-BOHB, .icon-cashier-BOJZ, .icon-cashier-BOL, .icon-cashier-BOP, .icon-cashier-BOQH, .icon-cashier-BOQZ, .icon-cashier-BOSH, .icon-cashier-BOSZ, .icon-cashier-BOYK, .icon-cashier-BOZK, .icon-cashier-BSB, .icon-cashier-BZMD, .icon-cashier-CABANK, .icon-cashier-CBKF, .icon-cashier-CCB, .icon-cashier-CCQTGB, .icon-cashier-CDCB, .icon-cashier-CDRCB, .icon-cashier-CEB, .icon-cashier-CGNB, .icon-cashier-CIB, .icon-cashier-CITIC, .icon-cashier-CMB, .icon-cashier-CMBC, .icon-cashier-COMM, .icon-cashier-CQBANK, .icon-cashier-CRCBANK, .icon-cashier-CSRCB, .icon-cashier-CZCCB, .icon-cashier-CZRCB, .icon-cashier-DAQINGB, .icon-cashier-DBSCN, .icon-cashier-DLB, .icon-cashier-DRCBCL, .icon-cashier-DYCB, .icon-cashier-DYCCB, .icon-cashier-DYLSCB, .icon-cashier-DZBANK, .icon-cashier-EGBANK, .icon-cashier-FDB, .icon-cashier-FJHXBC, .icon-cashier-FJNX, .icon-cashier-FSCB, .icon-cashier-FXCB, .icon-cashier-GCB, .icon-cashier-GDB, .icon-cashier-GDRCC, .icon-cashier-GHB, .icon-cashier-GLBANK, .icon-cashier-GRCB, .icon-cashier-GSRCU, .icon-cashier-GXRCU, .icon-cashier-GYCB, .icon-cashier-GZB, .icon-cashier-GZRCU, .icon-cashier-H3CB, .icon-cashier-HANABANK, .icon-cashier-HBC, .icon-cashier-HBRCU, .icon-cashier-HDBANK, .icon-cashier-HKB, .icon-cashier-HLJRCU, .icon-cashier-HNRCC, .icon-cashier-HNRCU, .icon-cashier-HRBANK, .icon-cashier-HSBANK, .icon-cashier-HSBC, .icon-cashier-HSBK, .icon-cashier-HURCB, .icon-cashier-HXBANK, .icon-cashier-HZCB, .icon-cashier-ICBC, .icon-cashier-JHBANK, .icon-cashier-JINCHB, .icon-cashier-JJBANK, .icon-cashier-JLBANK, .icon-cashier-JLRCU, .icon-cashier-JNBANK, .icon-cashier-JRCB, .icon-cashier-JSB, .icon-cashier-JSBANK, .icon-cashier-JSRCU, .icon-cashier-JXBANK, .icon-cashier-JXRCU, .icon-cashier-JZBANK, .icon-cashier-JZCBANK, .icon-cashier-KLB, .icon-cashier-KSRB, .icon-cashier-LHBANK, .icon-cashier-LNRCC, .icon-cashier-LSBANK, .icon-cashier-LSBC, .icon-cashier-LSCCB, .icon-cashier-LZCCB, .icon-cashier-LZYH, .icon-cashier-NBBANK, .icon-cashier-NBCBANK, .icon-cashier-NBYZ, .icon-cashier-NCB, .icon-cashier-NDHB, .icon-cashier-NHB, .icon-cashier-NJCB, .icon-cashier-NMGNXS, .icon-cashier-NXRCU, .icon-cashier-NYBANK, .icon-cashier-NYCB, .icon-cashier-ORBANK, .icon-cashier-PSBC, .icon-cashier-PZHCCB, .icon-cashier-QDCCB, .icon-cashier-QJCCB, .icon-cashier-QLBANK, .icon-cashier-RBOZ, .icon-cashier-RXCB, .icon-cashier-RZB, .icon-cashier-SCB, .icon-cashier-SCBBANK, .icon-cashier-SCCB, .icon-cashier-SCRCU, .icon-cashier-SDEB, .icon-cashier-SDRCU, .icon-cashier-SHBANK, .icon-cashier-SHRCB, .icon-cashier-SJBANK, .icon-cashier-SNCCB, .icon-cashier-SPABANK, .icon-cashier-SPDB, .icon-cashier-SRBANK, .icon-cashier-SRCB, .icon-cashier-SXCB, .icon-cashier-SXRCCU, .icon-cashier-SXRCU, .icon-cashier-SZSBK, .icon-cashier-TACCB, .icon-cashier-TCCB, .icon-cashier-TCRCB, .icon-cashier-TJBHB, .icon-cashier-TLBANK, .icon-cashier-TRCB, .icon-cashier-TSBANK, .icon-cashier-TZCB, .icon-cashier-UBCHN, .icon-cashier-WHBANK, .icon-cashier-WHCCB, .icon-cashier-WHRCB, .icon-cashier-WJRCB, .icon-cashier-WOORI, .icon-cashier-WRCB, .icon-cashier-WZCB, .icon-cashier-XABANK, .icon-cashier-XCYH, .icon-cashier-XJRCU, .icon-cashier-XLBANK, .icon-cashier-XMBANK, .icon-cashier-XTB, .icon-cashier-XXBANK, .icon-cashier-XYBANK, .icon-cashier-XYFRCB, .icon-cashier-YBCCB, .icon-cashier-YNRCC, .icon-cashier-YQCCB, .icon-cashier-YXCCB, .icon-cashier-YZBANK, .icon-cashier-ZBCB, .icon-cashier-ZGCCB, .icon-cashier-ZJKCCB, .icon-cashier-ZJNX, .icon-cashier-ZJTLCB, .icon-cashier-ZRCBANK, .icon-cashier-ZYCBANK, .icon-cashier-ZZBANK, .icon-cashier-ZZYH {
+text-indent: -9999px;
+background-image: url("../image/banks.jpg");}
+.icon-cashier-ICBC {background-position: 0px -3096px;}
+.icon-cashier-ABC {background-position: 0px -0px;}
+.icon-cashier-CCB {background-position: 0px -1044px;}
+.icon-cashier-SPDB {background-position: 0px -5076px;}
+.icon-cashier-BOC {background-position: 0px -288px;}
+.icon-cashier-CMB {background-position: 0px -1332px;}
+.icon-cashier-CIB {background-position: 0px -1260px;}
+.icon-cashier-GDB {background-position: 0px -2160px;}
+.icon-cashier-SPABANK {background-position: 0px -5040px;}
+.icon-cashier-PSBC {background-position: 0px -4392px;}
+.tab{font-size: 28px;font-weight: 700;height: 38px;width: 111px;}
+/**********************提现****************************/
+.lct_tx{width:auto; min-height:120px; margin:0 0 25px 0; border:1px solid #e6e6e6; background:#ffffff;}
+.lct_tx .top{width:auto; height:58px; background:url(../images/tx_01.jpg) repeat-x; border-bottom:1px solid #d4d4d4}
+.lct_tx .p{color:#3f3f3f; font-size:20px; font-weight:700; line-height:58px; padding:0 29px 0 29px}
+.lct_tx .ye{color:#3f3f3f; font-size:14px; line-height:58px; }
+.lct_tx .right{font-size:12px; line-height:58px; padding-right:30px }
+.lct_tx .right a{color:#3f8ed6}
+.lct_tx .right .a{ background:url(../images/tx_02.jpg) left no-repeat; padding:12px 0px 8px 30px}
+.lct_tx .right a:hover{color:#ff7332}
+.lct_tx .centent{width:710px; min-height:100px; margin:44px 0 0 68px; }
+.lct_tx .centent .td1{ color:#3f3f3f; font-size:14px; text-align:center; line-height:63px}
+.lct_tx .centent .td2{ width:595px; background:#fffedf}
+.lct_tx .centent .td3{ color:#a8a8a8; font-size:12px; line-height:30px; background:url(../images/tx_04.jpg) left no-repeat; padding-left:20px}
+.lct_tx .centent .ktxj{height:114px; margin:70px 0 0 113px;}
+.lct_tx .centent .ktxj .bt{font-size:12px; line-height:25px; color:#6f6f6f; padding:20px 0 20px 0}
+.lct_tx .centent .ktxj .nr1{color:#a8a8a8; font-size:12px; line-height:22px; width:136px; height:114px; background:url(../images/tx_05.jpg) right no-repeat}
+.lct_tx .centent .ktxj .nr2{width:143px; height:114px; background:url(../images/tx_05.jpg) right no-repeat;padding-top: 23px;}
+.lct_tx .centent .ktxj .nr3{padding-left:35px}
+.lct_tx .centent .ktxj .nr3 a{ width:auto; display:block; color:#a8a8a8; font-size:12px; line-height:22px}
+.lct_tx .centent .ktxj .nr3 a:hover{color:#900}
+.lct_tx .tx_table{width:825px; padding:50px}
+.lct_tx .tx_table td{  line-height:45px; font-family:"宋体"; font-size:14px}
+.lct_tx .tx_table .td1{width:120px; margin-right:7px; text-align:right; color:#3f3f3f;}
+.lct_tx .tx_table .td2{width:695px; height:45px; background:#ebf2f8; border:1px solid #91c1d8; padding-bottom:0px;}
+.lct_tx .tx_table .kahao{color:#000000; background:url(../images/tx_08.jpg) left center no-repeat; padding-left:30px}
+.lct_tx .tx_table .radio{margin-left:15px;margin-right:15px; vertical-align:middle;   height:45px}
+.lct_tx .tx_table .data{width:115px; margin-left:70px; height:25px; padding-top:10px}
+.lct_tx .tx_table .cishu{color:#848484; padding-left:60px;}
+.lct_tx .tx_table .cishu a{color:#848484; padding-left:27px}
+.lct_tx .tx_table .xianjin{width:192px; height:39px; margin-right:7px; margin-top:40px; border:1px solid #b9b9b9}
+.lct_tx .tx_table .hot{ margin-left:40px; position:relative}
+.lct_tx .tx_table .xyb{width:105px; height:32px; background:url(../images/smrz_06.jpg) no-repeat; border:0px; margin:0 5px 0 0; padding:0px; vertical-align:middle}
+.lct_tx .tx_qrxx{width:692px; min-height:100px; margin:40px 0 30px 105px;}
+.lct_tx .tx_qrxx .xinxi{width:690px; padding:25px 0 25px 0; border:1px solid #91c1d8; background:#ebf2f8}
+.lct_tx .tx_qrxx .xinxi td{font-size:14px; color:#000; line-height:30px; height:30px; padding:5px 0 5px 0}
+.lct_tx .tx_qrxx .xinxi .td1{width:153px; text-align:right; padding-right:25px}
+.lct_tx .tx_qrxx .xinxi .td2{width:510px}
+.lct_tx .tx_qrxx .xinxi .shijian{background:url(../images/tx_13.jpg) left center no-repeat; padding-left:25px; color:#ff7332; font-family:"微软雅黑"}
+.lct_tx .tx_qrxx .pwd{width:400px; padding:25px 0 25px 0;}
+.lct_tx .tx_qrxx .pwd .td1{width:75px; line-height:30px; font-size:14px; color:#3f3f3f;}
+.lct_tx .tx_qrxx .pwd .td2{width:325px}
+.lct_tx .tx_qrxx .pwd .input{width:190px; height:28px}
+.lct_tx .tx_qrxx .pwd a{color:#3f8ed6; font-size:12px; padding-left:10px}
+.lct_tx .tx_qrxx .pwd a:hover{color:#900}
+.lct_tx .tx_qrxx .pwd .tj{width:105px; height:32px; background:url(../images/tx_14.jpg) no-repeat; border:0px; margin:0 5px 0 0; padding:0px; vertical-align:middle;text-indent:-9999px;}
+.tx_jindu{width:570px; height:100px; }
+.tx_jindu .wz{font-size:12px; font-family:"宋体"; color:#666666; line-height:22px; padding-top:10px}
+.tx_jindu .wz .p1{ width:139px}
+.tx_jindu .wz .p2{ width:280px}
+.tx_jindu .wz .p3{}
+/***************************首页**********************************************/
+.index_yhxx{width:auto; clear:both; height:99px; background:#dfdbce }
+.index_yhxx .yhxx{width:961px; height:99px; background:url(../images/index_08.jpg) no-repeat; position:relative;}
+.index_yhxx .yhxx .good{width:822px; border-bottom:1px solid #dfdbce; font-size:14px; font-family:"微软雅黑"; color:#ffffff; line-height:30px; margin-top:15px}
+.index_yhxx .yhxx .yhm{width:822px;  font-size:12px; font-family:"微软雅黑"; color:#ffffff; line-height:30px;}
+.index_yhxx .yhxx .yz{width:168px; height:29px; background:url(../images/index_11.png) no-repeat; position:absolute; margin-top:27px;margin-left:187px; font-family:"微软雅黑"; font-size:12px; color:#6c6c6c; line-height:25px; padding-left:8px}
+.index_zhye{width:959px; height:98px; border:1px solid #e4e4e7; margin-top:12px; margin-bottom:12px; background:#ffffff}
+.index_zhye .zhye{width:393px; height:98px; border-right:1px solid #e4e4e7}
+.index_zhye .zhye .p{color:#707070; font-family:"微软雅黑"; font-size:14px; line-height:30px; padding:15px 0 0 28px}
+.index_zhye .zctx{padding-left:28px; height:30px}
+.index_zhye .zctx p{color:#707070; font-family:"微软雅黑"; font-size:24px; line-height:30px; float:left}
+.index_zhye .zctx img{vertical-align:middle; margin-left:20px; float:left}
+.index_zhye .qtzc{width:236px; height:98px; border-right:1px solid #e4e4e7}
+.index_zhye .qtzc .p{color:#707070; font-family:"微软雅黑"; font-size:14px; line-height:30px; padding:15px 0 0 28px}
+.index_zhye .qtzc .qt{width:auto; height:30px; padding-left:28px;}
+.index_zhye .qtzc .qt p{float:left; font-family:"微软雅黑"; color:#707070; font-size:12px; line-height:30px}
+.index_zhye .qtzc .qt a{float:right; padding-right:15px; font-family:"微软雅黑"; color:#3f8ed6; font-size:12px; line-height:30px}
+.index_zhye .qtzc .qt a:hover{color:#900}
+.index_jyjl{width:961px;  margin-top:12px; margin-bottom:12px; }
+.index_jyjl .top{width:auto; height:36px; background:url(../image/index_15.jpg) left no-repeat}
+.index_jyjl .top .p1{width:106px; line-height:36px; font-family:"微软雅黑"; font-size:14px; color:#707070; text-align:center; float:left}
+.index_jyjl .top .p2{width:106px; line-height:36px; font-family:"微软雅黑"; font-size:12px; color:#707070; text-align:center; float:left}
+.jyjl_xxk{width:959px; min-height:150px; border:1px solid #e4e4e7; margin-top:12px; margin-bottom:12px; background:#ffffff}
+#jyjlxxk_ul{width:auto; height:14px; padding:12px; border-bottom:1px solid #cbcbcb}
+#jyjlxxk_ul li{width:88px; height:14px; line-height:14px; font-size:12px; float:left; text-align:center; color:#3f8ed6; border-right:1px solid #3f8ed6}
+#jyjlxxk_ul .hover{color:#3c3c3c; border:0px}
+.jyjl_xxk .xxknr{display:none; width:auto; clear:both; font-family:"微软雅黑"; font-size:13px; color:#707070}
+#con_jyjl_1{display:block}
+.jyjl_xxk .xxknr .td1{width:110px; text-align:center}
+.jyjl_xxk .xxknr .td2{width:425px}
+.jyjl_xxk .xxknr .td3{width:150px}
+.jyjl_xxk .xxknr .td4{width:133px; text-align:center}
+.jyjl_xxk .xxknr .td5{width:140px}
+.jyjl_xxk .xxknr .tr1 td{line-height:43px; border-bottom:1px solid #d4d4d5}
+.jyjl_xxk .xxknr .tr2 td{line-height:40px; background:#fbfbfb; border-bottom:1px solid #d4d4d5}
+.jyjl_xxk .xxknr .shuzi{width:66px; display:block; color:#ff7332; text-align:center; }
+.jyjl_xxk .xxknr .shuzi1{width:90px; display:block; color:#45b035; text-align:center; }
+.jyjl_xxk .xxknr .amount-pay-in{color: #53a000;font-weight: 700;}
+.jyjl_xxk .xxknr .amount-pay-out{color: #f37800;font-weight: 700;}
+.jyjl_xxk .xxknr .mingxi{width:86px; height:27px; display:block; line-height:23px; text-align:center; color:#ff7332; background:url(../images/index_17.png) no-repeat; position:absolute; margin-top:-57px; margin-left:30px}
+.jyjl_xxk .xxknr .select{width:50px; height:23px; line-height:50px; border:0px; color:#3f8ed6}
+.jyjl_xxk .xxknr .cksyjl{width:auto; height:42px; line-height:42px; font-size:12px}
+.jyjl_xxk .xxknr .cksyjl .a1{display:block; float:left; padding-left:40px; background:url(../images/index_18.jpg) left no-repeat; color:#3f8ed6}
+.jyjl_xxk .xxknr .cksyjl p{float:right; padding:0 30px 0 0 }
+.jyjl_xxk .xxknr .cksyjl .a2{color:#3f8ed6}
+.jyjl_xxk .xxknr .cksyjl .a2:hover{color:#900}
+.inpourImg{display:block;width:59px;height:25px;background:url("../../member/image/image.png") no-repeat;background-position: -187px -5px;}
+.withdrawImg{display:block;width:59px;height:25px;background:url("../../member/image/image.png") no-repeat;background-position: -245px -6px;}
+.headerLogoImg{float:right;display:block;width:326px;height:98px;background:url("../../member/image/image.png") no-repeat;background-position: -300px -112px;}
+/**************************************交易记录**************************************************/
+.transaction_top{width:auto; height:34px; background:#dadada; }
+.transaction{width:961px; margin-top:14px;}
+#transaction_ul{width:961px; margin:0 auto}
+#transaction_ul li{width:72px; height:34px; text-align:center; line-height:34px; font-family:"微软雅黑"; font-size:12px; float:left; margin-right:15px; color:#707070; }
+#transaction_ul .hover{background:url(../images/jyjl_01.jpg) no-repeat; color:#ffffff}
+#transaction_ul .right{float:right; width:150px}
+#con_transaction_1{display:block}
+.transaction .top{width:959px; min-height:98px; border:1px solid #e6e6e6; background:#ffffff;}
+.transaction .top table{margin-top:20px}
+.transaction .top td{font-size:12px; line-height:24px; padding-bottom:15px}
+.transaction .top .td1{width:77px; padding-right:8px; text-align:center; color:#616161}
+.transaction .top .td2{width:875px}
+.transaction .top .text{width:110px; height:24px; background:url(../images/jyjl_02.jpg) right no-repeat; border:1px solid #cdcdcd; padding-left:7px}
+.transaction .top .td2 a{padding:5px 15px 5px 15px;  text-align:center; color:#3f8ed6;}
+.transaction .top .td2 .a1{ background-color:gray;color:#FFF}
+.transaction .centent{width:959px; min-height:98px; border-top:1px solid #e6e6e6; border-left:1px solid #e6e6e6; border-right:1px solid #e6e6e6; background:#ffffff; margin-top:20px}
+.transaction .centent td{font-family:"微软雅黑"; font-size:12px; border-bottom:1px solid #d4d4d5}
+.transaction .centent .bt td{line-height:38px; color:#3c3c3c}
+.transaction .centent .tr1 td{line-height:42px; color:#707070}
+.transaction .centent .tr2 td{line-height:38px; color:#707070; background:#fbfbfb}
+.transaction .centent .td1{width:90px; text-align:center;}
+.transaction .centent .td2{width:90px;}
+.transaction .centent .td3{width:140px; text-align:center}
+.transaction .centent .td4{width:100px; text-align:center}
+.transaction .centent .td5{width:90px; text-align:center}
+.transaction .centent .td6{width:99px; text-align:center}
+.transaction .centent .select{width:50px; height:23px; line-height:50px; border:0px; color:#3f8ed6}
+.transaction .centent .shuzi{width:50px; display:block; color:#ff7332; text-align:center; padding-left:30px}
+.transaction .centent .shuzi1{width:90px; display:block; color:#45b035; text-align:center; padding-left:30px }
+.transaction .centent .mingxi{width:86px; height:27px; display:block; line-height:23px; text-align:center; color:#ff7332; background:url(../images/index_17.png) no-repeat; position:absolute;margin-top:-53px; margin-left:40px}
+.transaction .cksyjl{width:auto; height:42px; line-height:42px; font-size:12px}
+.transaction .cksyjl .a1{display:block; float:left; padding-left:40px; background:url(../images/index_18.jpg) left no-repeat; color:#3f8ed6}
+.transaction .cksyjl p{float:right; padding:0 30px 0 0 }
+.transaction .cksyjl .a2{color:#3f8ed6}
+.transaction .cksyjl .a2:hover{color:#900}
+
+.yuan{color:#ff7332;font-size:24px;font-weight:600;}
+.fen{color:#ff7332;font-size:18px;font-weight:600;}

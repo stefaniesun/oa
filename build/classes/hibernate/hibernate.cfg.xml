@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- 用户登录表 -->
+		<mapping class="xyz.model.security.LogOper"></mapping>
+		<mapping class="xyz.model.security.SecurityApi"></mapping>
+		<mapping class="xyz.model.security.SecurityFunction"></mapping>
+		<mapping class="xyz.model.security.SecurityLogin"></mapping>
+		<mapping class="xyz.model.security.SecurityPosition"></mapping>
+		<mapping class="xyz.model.security.SecurityPositionButton"></mapping>
+		<mapping class="xyz.model.security.SecurityUser"></mapping>
+		<mapping class="xyz.model.security.TokenInfo"></mapping>
+		<mapping class="xyz.model.security.Possessor"></mapping>
+		
+	</session-factory>
+</hibernate-configuration>
+  
