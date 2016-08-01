@@ -2,14 +2,18 @@ $(document).ready(function(){
 	
 	
 	xyzCombobox({
-		combobox : 'test',
-		url : '../../AdminUserWS/getAllPosition.do',
+		combobox : 'position',
+		url : '../AdminUserWS/getAllPosition.do',
 		valueField: 'numberCode',
 		textField : 'nameCn'
 	});
 	
 	   
 	 tableInit();
+	 
+	 $("#userQueryButton").click(function(){
+			loadTable();
+		});
 	 
 });
 
@@ -32,14 +36,22 @@ function tableInit(){
 				handler: 'editUser()'
 		};
 	}
+	if(xyzControlButton("buttonCode_h20151214155704")){
+		toolbar[toolbar.length]={
+				text: '重设密码',
+				icon: 'fa-lock',
+				iconType:'danger',
+				handler: 'editUserPassword()'
+		};
+	}
 	xyzgrid({
 		table : 'userManagerTable',
-		url : '../../AdminUserWS/queryUserList.do',
+		url : '../AdminUserWS/queryUserList.do',
 		toolbar : toolbar,
 	    columns : [
 	      {field:'checkboxTemp',checkbox:'true'},
           {field:'nickName',title:'昵称'},
-  		  {field:'username',title:'账号'},
+  		  {field:'username',title:'用户名'},
 		  {field:'enabled',title:'可用',
 				formatter: function(value,row,index){
 					if (value == 1){
@@ -51,9 +63,32 @@ function tableInit(){
 		  },
   		  {field:'positionNameCn',title:'岗位'},
   		  {field:'possessorNameCn',title:'资源组'},
-  		  {field:'addDate',title:'添加时间'}
+  		  {field:'addDate',title:'添加时间'},
+  		  {field:'temp',title:'设置资源组',width:'90px',
+				formatter: function(value,row,index){
+					return '<button data-toggle="button" class="btn btn-primary btn-sm btn-outline" type="button"><i class="fa fa-sitemap"></i>&nbsp;资源组</button>';
+				}
+		  },
+  		  {field:'temp',title:'绑定手持终端',width:'90px',
+				formatter: function(value,row,index){
+					return '<button data-toggle="button" class="btn btn-primary btn-sm btn-outline" type="button"><i class="fa fa-mobile-phone"></i>&nbsp;手持终端</button>';
+				}
+		  }
+  	
 	    ]
 	});
+}
+
+function loadTable(){
+	var username = $("#username").val();
+	var nickName = $("#nickName").val();
+	var position = $("#position").combobox("getValue");
+	
+	$("#userManagerTable").bootstrapTable('refresh',{query:{
+		username : username,
+		nickName : nickName,
+		position : position
+	}});
 }
 
 
@@ -114,7 +149,7 @@ function editUser(){
 
 function editUserEnabled(username){
 	xyzAjax({
-		url : "../../AdminUserWS/editUserEnabled.do",
+		url : "../AdminUserWS/editUserEnabled.do",
 		data : {
 			username : username
 		},
@@ -134,7 +169,7 @@ function addUserSubmit(){
 	var nickName = $("#nickNameForm").val();
 	
 	xyzAjax({
-		url : "../../AdminUserWS/addUser.do",
+		url : "../AdminUserWS/addUser.do",
 		data : {
 			username : username,
 			nickName : nickName
@@ -159,7 +194,7 @@ function editUserSubmit(){
 	var nickName = $("#nickNameForm").val();
 	
 	xyzAjax({
-		url : "../../AdminUserWS/editUser.do",
+		url : "../AdminUserWS/editUser.do",
 		data : {
 			username : username,
 			nickName : nickName
@@ -176,5 +211,67 @@ function editUserSubmit(){
 	});
 
 }
+
+function editUserPassword(){
+	var users=$('#userManagerTable').bootstrapTable('getSelections');
+
+	if(users.length != 1){
+		top.layer.msg('请先选中单个对象',{img: "warning"});
+		return;
+	}
 	
+	var row = users[0];
+	
+	xyzdialog({
+		id : 'dialog_editUserPassword',
+		title : '重设密码',
+		content: '../security/editUserPassword.html',
+	    fit:false,
+	    width:'600px',
+	    height:'400px',
+	    buttons:[{
+			text:'确定',
+			handler:function(){
+				editUserPasswordSubmit();
+			}
+		},{
+			text:'取消'
+		}],
+		onLoad:function(){
+			$("#usernameForm").val(row.username);
+			$("#nickNameForm").val(row.nickName);
+		}
+	});
+}
+	
+function editUserPasswordSubmit(){
+	
+	var username = $("#usernameForm").val();
+	var password = $("#passwordForm").val();
+	var confirmPassword = $("#confirmPasswordForm").val();
+	
+	if(password!=confirmPassword){
+		layer.tips('两次输入的密码不一致', '#passwordForm');
+		return;
+	}
+	
+	password=$.md5(password).substr(8,16);
+	
+	xyzAjax({
+		url : "../AdminUserWS/editUserPassword.do",
+		data : {
+			username : username,
+			password : password
+		},
+		success : function(data) {
+			if(data.status==1){
+				$('#userManagerTable').bootstrapTable('refresh');
+				top.layer.msg('操作成功',{img:'check'});
+				layer.close($("#dialog_editUserPassword").data("index"));
+			}else{
+				top.layer.alert(data.msg, {icon: 2});
+			}
+		}
+	});
+}
 

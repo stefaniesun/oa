@@ -48,6 +48,5 @@ public interface AdminUserSvc {
 	public Map<String, Object> editUserPassword(String username,String password);
 	
 	public Map<String, Object> getSecurityUserList(String q);
-	public Map<String, Object> setImeiCode(String username,String imeiCode);
 	
 }

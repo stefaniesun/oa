@@ -47,8 +47,6 @@ public class AdminUserSvcImp  implements AdminUserSvc{
 		sql.append("su.username AS username,");
 		sql.append("su.position AS position,");
 		sql.append("su.possessor AS possessor,");
-		sql.append("su.imei AS imei,");
-		sql.append(" (SELECT p.name_cn from provider p WHERE p.number_code = su.possessor ) as possessorNameCn ,");
 		sql.append(" (SELECT sp.name_cn FROM security_position sp WHERE sp.number_code = su.position) AS positionNameCn");
 		sql.append(" FROM security_user su WHERE 1=1");
 
@@ -84,9 +82,6 @@ public class AdminUserSvcImp  implements AdminUserSvc{
 		addScalar("username").
 		addScalar("position").
 		addScalar("positionNameCn").
-		addScalar("possessor").
-		addScalar("imei").
-		addScalar("possessorNameCn").
 		setResultTransformer(Transformers.aliasToBean(SecurityUser.class));
 		
 		@SuppressWarnings("unchecked")
@@ -304,17 +299,5 @@ public class AdminUserSvcImp  implements AdminUserSvc{
 		return ReturnUtil.returnMap(1, results);
 	}
 
-    @Override
-    public Map<String, Object> setImeiCode(String username , String imeiCode) {
-    	if(imeiCode==null || "".equals(imeiCode)){
-        	return ReturnUtil.returnMap(0, "设备识别码不存在");
-        }
-        SecurityUser securityUser=(SecurityUser)commonDao.getObjectByUniqueCode("SecurityUser", "username", username);
-        if(securityUser==null){
-        	return ReturnUtil.returnMap(0, "账户不存在");
-        }
-        securityUser.setImei(imeiCode);
-        commonDao.update(securityUser);
-        return ReturnUtil.returnMap(1, null);
-    }
+
 }

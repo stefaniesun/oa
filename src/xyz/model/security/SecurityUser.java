@@ -51,8 +51,6 @@ public class SecurityUser{
 	@Column(name="alter_date")
 	private Date alterDate;//修改时间
 	
-	@Column(name="imei")
-	private String imei;//绑定移动手持终端IMEI码
 	
 	@Transient
 	private String positionNameCn;
@@ -164,11 +162,5 @@ public class SecurityUser{
 		this.possessorNameCn = possessorNameCn;
 	}
 
-    public String getImei() {
-        return imei;
-    }
 
-    public void setImei(String imei) {
-        this.imei = imei;
-    }
 }

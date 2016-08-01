@@ -11,7 +11,7 @@ function xyzgrid(d){
 			toolbarHtml+="<button style='margin-right:5px' onclick='"+toolbar[i].handler+"' class='btn btn-"+toolbar[i].iconType+" ' type='button'><i class='fa "+toolbar[i].icon+"'></i>&nbsp;"+toolbar[i].text+"</button>";
 		}
 		toolbarHtml+="</div>";
-		$("#userManagerTable").before(toolbarHtml);
+		$("#"+d.table).before(toolbarHtml);
 		
 	}
 	
@@ -20,6 +20,7 @@ function xyzgrid(d){
 		
 		url : d.url==undefined?undefined:d.url,//表格数据请求URL
 		columns : d.columns,//表格显示列
+		method:'get',//请求方式
 		toolbar : '#toolbar',//一个jQuery 选择器，指明自定义的toolbar 例如:#toolbar, .toolbar.
 		pagination : true,//设置为 true 会在表格底部显示 分页条
 		sidePagination : 'server',//分页模式，服务端进行分页
@@ -36,6 +37,16 @@ function xyzgrid(d){
 		paginationDetailHAlign : 'left',
 		singleSelect : 'true',//设置True 将禁止多选
 		smartDisplay:'true',//根据浏览设备自动切换浏览模式
+		ajax:function(params){
+			$.ajax({
+				  type: 'post',
+				  url : d.url==undefined?undefined:d.url,//表格数据请求URL
+				  data: params.data,
+				  success: params.success,
+				  dataType: 'json'
+				});
+		},
+		queryParamsType:'limit',
 		//查询条件
 		queryParams : d.queryParams==undefined?function(params){
 			params.page=parseInt(params.offset/params.limit)+parseInt(1);//分页首页页码
@@ -350,25 +361,58 @@ function xyzdialog(d){
  */
 function xyzCombobox(c){
 	
+
+ 	var  toggle='<div class="input-group-btn">';
+ 	toggle+='<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">';
+ 	toggle+='<span class="caret"></span>';
+	toggle+='</button>';
+	toggle+='<ul class="dropdown-menu dropdown-menu-right" role="menu">';
+	toggle+='</ul>';
+	toggle+='</div>';
+	 $("#"+c.combobox).after(toggle);
+ 	
+	 var resultList = {};
+	 $("#"+c.combobox).bsSuggest('init', {
+		 getDataMethod: "url",    //获取数据的方式，总是从 URL 获取
+         url: c.url,
+         keyField: "text",               //有效显示于列表中的字段，非有效字段都会过滤，默认全部，对自定义getData方法无效
+         fnProcessData: function (data) {    // url 获取数据时，对数据的处理，作为 fnGetData 的回调函数
+        	 var dataList = {value: []};
+             data=data.content;
+             for(var i=0;i<data.length;i++){
+            	  dataList.value.push({
+            		  id: eval("data[i]."+c.valueField),
+            		  text: eval("data[i]."+c.textField)
+                  });
+             }
+             resultList=dataList;
+             return dataList;
+         }
+     }).on('onDataRequestSuccess', function (e, result) {
+         console.log('onDataRequestSuccess: ', result);
+     }).on('onSetSelectValue', function (e, keyword, data) {
+         console.log(keyword);
+     }).on('onUnsetSelectValue', function () {
+    	 $(this).attr("data-id","");
+         console.log('onUnsetSelectValue');
+     });
+	 
 	
-	$("#"+c.combobox).bsSuggest('init', {
-        /*url: "/rest/sys/getuserlist?keyword=",
-        effectiveFields: ["userName", "email"],
-        searchFields: [ "shortAccount"],
-        effectiveFieldsAlias:{userName: "姓名"},*/
-		getDataMethod: "url",  
-		url : c.url,
-		idField: 'numberCode',
-		keyField : 'nameCn',
-    }).on('onDataRequestSuccess', function (e, result) {
-    	result=result.content;
-        console.log(result);
-    }).on('onSetSelectValue', function (e, keyword, data) {
-        console.log('onSetSelectValue: ');
-    }).on('onUnsetSelectValue', function () {
-        console.log('onUnsetSelectValue');
-    });
-	
+	 $.fn.extend({
+		 combobox:function(method){
+			 if(method=="getValue"){
+				for(var i=0;i<resultList.length;i++){
+					alert(resultList[i].text);
+					alert($(this).val());
+					if(resultList[i].text==$(this).val()){
+						 return resultList[i].id;
+					}
+				}
+				 return "";
+			 }
+		 }
+	});
+	 
 	/*var xyzComboboxData = {};
 	xyzComboboxData.valueField = c.valueField==undefined?'value':c.valueField;
 	xyzComboboxData.textField = c.textField==undefined?'text':c.textField;

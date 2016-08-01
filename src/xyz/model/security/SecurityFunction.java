@@ -29,6 +29,9 @@ public class SecurityFunction {
 	@Column(name="is_api")
 	private int isApi;//是否是孤立的API
 	
+	@Column(name="icon")
+	private String icon;//图标
+	
 	@Column(name="url")
 	private String url;//服务地址
 	
@@ -103,5 +106,13 @@ public class SecurityFunction {
 
 	public void setIsApi(int isApi) {
 		this.isApi = isApi;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 }

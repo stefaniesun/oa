@@ -110,20 +110,4 @@ public class AdminUserWS{
 		return adminUserSvc.getSecurityUserList(q);
 	}
 	
-	/**
-	 * 
-	 * Description  ：〈添加用户的手持终端号〉
-	 *
-	 * @param q
-	 * @return Map<String,Object>
-	 * @exception   ：〈描述可能的异常〉
-	
-	 * @author      ：吴明
-	 * @date        ：2016-6-28下午12:02:30
-	 */
-	@RequestMapping(value="setImeiCode")
-	@ResponseBody
-	public Map<String, Object> setImeiCode(String username,String imeiCode){
-	    return adminUserSvc.setImeiCode(username,imeiCode);
-	}
 }

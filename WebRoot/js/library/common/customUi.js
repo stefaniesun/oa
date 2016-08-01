@@ -391,3 +391,30 @@ function xyzCloseProgressBar(id){
 	},200);
 }
 
+function xyzDeleteComboboxRow(div,value){
+	var dataT = $("#"+div).combobox("getData");
+	var dataN = [];
+	for(var ppp in dataT){
+		if(dataT[ppp].value!=value){
+			dataN[dataN.length] = dataT[ppp];
+		}
+	}
+	$("#"+div).combobox("loadData",dataN);
+}
+
+function xyzOnChangeGetText(div,value){
+	var result = "";
+	var dataT = $("#"+div).combobox("getData");
+	for(var ppp in dataT){
+		if(dataT[ppp].value==value){
+			result = dataT[ppp].text;
+		}
+	}
+	return result;
+}
+
+function xyzAddComboboxRow(div,record){
+	var dataT = $("#"+div).combobox("getData");
+	dataT.splice(0,0,record);
+	$("#"+div).combobox("loadData",dataT);
+}

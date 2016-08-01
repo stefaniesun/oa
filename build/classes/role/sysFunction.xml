@@ -1,200 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
 	
-	<function isApi="0"  groupCn="应用" numberCode="orderContentManager" nameCn="订单处理" url="/jsp_core/orderContentManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20151218120200" nameCn="订单列表" url="/OrderContentWS/queryOrderContentList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20151221155601" nameCn="出票" url="/OrderContentWS/updateOrderContentForFlagClient.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20151221155602" nameCn="退款" url="/OrderContentWS/updateOrderContentForFlagRefund.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20151228110801" nameCn="修改出行人" url="/OrderContentWS/updateOrderContentForPersonInfo.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20151228110802" nameCn="订单发货" url="/OrderContentWS/updateOrderContentForDelivery.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160620134601" nameCn="设置订单是否允许退款" url="/OrderContentWS/editFlagAllowRefund.do"/>
-	</function>
-	
-	<function isApi="0"  groupCn="应用" numberCode="orderTpsManager" nameCn="TPS订单" url="/jsp_core/orderTpsManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160713171100" nameCn="订单列表" url="/OrderTpsWS/queryOrderTpsList.do"/>
-	</function>
-	
-	
-	<function isApi="0"  groupCn="应用" numberCode="refundManager" nameCn="退款处理" url="/jsp_core/refundManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160613092800" nameCn="退款列表" url="/RefundWS/queryRefundList.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160613092801" nameCn="退款信息列表" url="/RefundWS/queryRefundMsgList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160613092802" nameCn="退款申请审核" url="/RefundWS/checkRefundOper.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160613092803" nameCn="退款申请消息回复" url="/RefundWS/returnRefundMsgOper.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160613092804" nameCn="退款确认" url="/RefundWS/refundOper.do"/>
-	</function>
-	
-	<function isApi="0"  groupCn="应用" numberCode="seekHelpManager" nameCn="遇险求助" url="/jsp_core/seekHelpManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_x20160222161801" nameCn="求助列表" url="/SeekHelpWS/querySeekHelpList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160222161802" nameCn="修改状态" url="/SeekHelpWS/updateSeekHelp.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160222161803" nameCn="删除" url="/SeekHelpWS/deleteSeekHelp.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20160429100901" nameCn="获取指定时间段经纬度" url="/SeekHelpWS/getlatXandLatY.do"/>
-	</function>
-	
-	<function isApi="0"  groupCn="应用" numberCode="weinxinCouponActivityManager" nameCn="微信卡卷活动" url="/jsp_main/weixinCouponActivityManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160601105900" nameCn="微信卡卷活动列表" url="/WeixinCouponActivityWS/queryWeixinCouponActivityList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160601105901" nameCn="新增微信卡卷活动" url="/WeixinCouponActivityWS/addWeixinCouponActivity.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20160602093901" nameCn="查询发放记录列表" url="/CouponRecordWS/queryCouponRecordList.do"/>
-	</function>
-	
-	<function isApi="0"  groupCn="核销" numberCode="heXiaoPlatFormManager" nameCn="核销平台" url="/jsp_hx/heXiaoPlatFormManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20160715110300" nameCn="核销平台查询所有订单" url="/HeXiaoWS/queryHeXiaoAllOrderContentList.do"/>
-	</function>
-	<function isApi="0"  groupCn="核销" numberCode="heXiaoQueryManager" nameCn="核销查询" url="/jsp_hx/heXiaoQueryManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20160715110301" nameCn="核销查询所有出票订单" url="/HeXiaoWS/queryHeXiaoAllOrderContentByHandleList.do"/>
-	</function>
-	
-	<function isApi="0" groupCn="资源" numberCode="providerManager" nameCn="供应商" url="/jsp_main/providerManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20151215174400" nameCn="供应商列表" url="/ProviderWS/queryProviderList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160302122900" nameCn="编辑供应商图片" url="/ProviderWS/editProviderImage.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160505182001" nameCn="编辑供应商封面图片" url="/ProviderWS/editCoverImage.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20160506112601" nameCn="获取指定封面图片" url="/ProviderWS/getCoverImages.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20151215174401" nameCn="添加供应商" url="/ProviderWS/addProvider.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20151215174402" nameCn="编辑供应商" url="/ProviderWS/editProvider.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20151215174403" nameCn="删除供应商" url="/ProviderWS/deleteProvider.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160317113515" nameCn="更新产品默认价格" url="/ProviderWS/updateBasePrice.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160405182601" nameCn="设置供应商上下线" url="/ProviderWS/editOnlineFlag.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160405182602" nameCn="设置供应商PMS关联" url="/ProviderWS/editPmsProvider.do"/>
-	
-	</function>
-	
-	
-	
-	<function isApi="0" groupCn="资源" numberCode="productScenicManager" nameCn="产品--景点" url="/jsp_main/productScenicManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20151214181000" nameCn="景点产品列表" url="/ProductScenicWS/queryProductScenicList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20151214181001" nameCn="新增景点产品" url="/ProductScenicWS/addProductScenic.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20151214181002" nameCn="编辑景点产品" url="/ProductScenicWS/editProductScenic.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160415161300" nameCn="编辑景点图片" url="/ProductScenicWS/editProductScenicImage.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20151214181003" nameCn="删除景点产品" url="/ProductScenicWS/deleteProductScenic.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160318160900" nameCn="编辑景点产品特价设置开关" url="/ProductScenicWS/editUserTag.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160405182701" nameCn="设置景点产品上下线" url="/ProductScenicWS/editFlagOnline.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160620120701" nameCn="设置景点产品是否允许退款" url="/ProductScenicWS/editFlagAllowRefund.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160623103400" nameCn="设置景点产品是否自动出票" url="/ProductScenicWS/editIsAutoTicket.do"/>
-	</function>
-	
-	<function isApi="0" groupCn="资源" numberCode="productHotelManager" nameCn="产品--酒店" url="/jsp_main/productHotelManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20151215093700" nameCn="酒店产品列表" url="/ProductHotelWS/queryProductHotelList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20151215093701" nameCn="新增酒店产品" url="/ProductHotelWS/addProductHotel.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20151215093702" nameCn="编辑酒店产品" url="/ProductHotelWS/editProductHotel.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160302163100" nameCn="编辑酒店图片" url="/ProductHotelWS/editProductHotelImage.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20151215093703" nameCn="删除酒店产品" url="/ProductHotelWS/deleteProductHotel.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160318161000" nameCn="编辑酒店产品特价设置开关" url="/ProductHotelWS/editUserTag.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160217152500" nameCn="设置酒店PMS关联" url="/ProductHotelWS/editPms.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160217152501" nameCn="移除酒店PMS关联" url="/ProductHotelWS/deletePms.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160620120702" nameCn="设置酒店产品是否允许退款" url="/ProductHotelWS/editFlagAllowRefund.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160405182801" nameCn="设置酒店产品上下线" url="/ProductHotelWS/editFlagOnline.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160623103401" nameCn="设置酒店产品是否自动出票" url="/ProductHotelWS/editIsAutoTicket.do"/>
-	</function>
-	
-	
-	<function isApi="0" groupCn="资源" numberCode="productSpecialtyManager" nameCn="产品--土特产" url="/jsp_main/productSpecialtyManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160429113200" nameCn="土特产产品列表" url="/ProductSpecialtyWS/queryProductSpecialtyList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160429113201" nameCn="新增土特产产品" url="/ProductSpecialtyWS/addProductSpecialty.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160429113202" nameCn="编辑土特产产品" url="/ProductSpecialtyWS/editProductSpecialty.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160429113203" nameCn="编辑土特产图片" url="/ProductSpecialtyWS/editProductSpecialtyImage.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160429113204" nameCn="删除土特产产品" url="/ProductSpecialtyWS/deleteProductSpecialty.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160429113205" nameCn="编辑土特产产品特价设置开关" url="/ProductSpecialtyWS/editUserTag.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160620120703" nameCn="设置土特产产品是否允许退款" url="/ProductSpecialtyWS/editFlagAllowRefund.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160429113206" nameCn="设置土特产产品上下线" url="/ProductSpecialtyWS/editFlagOnline.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160623103402" nameCn="设置土特产产品是否自动出票" url="/ProductSpecialtyWS/editIsAutoTicket.do"/>
-	</function>
-	
-	<function isApi="0" groupCn="资源" numberCode="stationManager" nameCn="维修服务站" url="/jsp_main/stationManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160504113100" nameCn="维修服务站列表" url="/StationWS/queryStationList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160504113101" nameCn="新增维修服务站" url="/StationWS/addStation.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160504113102" nameCn="编辑维修服务站" url="/StationWS/editStation.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160504113103" nameCn="编辑维修服务站图片" url="/StationWS/editStationImage.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160504113104" nameCn="删除维修服务站" url="/StationWS/deleteStation.do"/>		
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160504113105" nameCn="设置维修服务站上线状态" url="/StationWS/editOnlineFlag.do"/>		
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160504113106" nameCn="维修服务站评论列表" url="/CommentWS/queryCommentListBySource.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160504113107" nameCn="删除维修服务站评论" url="/CommentWS/deleteComment.do"/>		
-	</function>
-	
-	<function isApi="0" groupCn="资源" numberCode="childScenic" nameCn="子景点" url="/jsp_main/childScenic.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_x20160624120300" nameCn="查询子景点列表" url="/ChildScenicWS/queryChildScenicList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160624120301" nameCn="增加子景点" url="/ChildScenicWS/addChildScenic.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160624120302" nameCn="修改子景点" url="/ChildScenicWS/editChildScenic.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160624120303" nameCn="删除子景点" url="/ChildScenicWS/deleteChildScenic.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_x20160627161300" nameCn="查询场景列表" url="/YiQiXiuSceneWS/queryYiQiXiuSceneList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160627161301" nameCn="增加场景"  url="/YiQiXiuSceneWS/addYiQiXiuScene.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160627161302" nameCn="修改场景" url="/YiQiXiuSceneWS/editYiQiXiuScene.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160627161303" nameCn="删除场景" url="/YiQiXiuSceneWS/deleteYiQiXiuScene.do"/>
-	</function>
-	
-	<function isApi="0" groupCn="基础数据" numberCode="regionManager" nameCn="数据--行政区" url="/jsp_base/regionManager.html">
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160429154900" nameCn="更新行政区数据" url="/RegionWS/updateRegionList.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160429154901" nameCn="行政区列表" url="/RegionWS/queryRegionList.do"/>
-	</function>
-	
-	<function isApi="0" groupCn="基础数据" numberCode="scenicManager" nameCn="数据--景点" url="/jsp_base/scenicManager.html">
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160503100200" nameCn="更新景点数据" url="/ScenicWS/updateScenicList.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160503100201" nameCn="景点列表" url="/ScenicWS/queryScenicList.do"/>
-	</function>
-	
-	
-	<function isApi="1" groupCn="资源方" numberCode="sellerManager" nameCn="资源方功能" url="">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20151222101300" nameCn="获取景点产品列表" url="/SellerScenicWS/queryProductScenicList.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20151222101301" nameCn="获取酒店产品列表" url="/SellerHotelWS/queryProductHotelList.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_x20151225152900" nameCn="查询产品列表" url="/ProductWS/queryProductList.do"/>
-	</function>
-	
-	
-	<function isApi="1" groupCn="库存接口" numberCode="productStockManager" nameCn="产品库存管理" url="">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_y20151229104901" nameCn="查询产品库存日志" url="/ProductStockWS/queryLogProductStock.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_y20151229104901" nameCn="查询库存管理信息" url="/ProductStockWS/queryProductForStockList.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_y20151229104901" nameCn="查询某产品所有库存" url="/ProductStockWS/queryProductStockAllList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_y20151229104901" nameCn="新建天库存" url="/ProductStockWS/addProductStock.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_y20151229104901" nameCn="删除库存1" url="/ProductStockWS/deleteProductStock.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_y20151229104901" nameCn="删除库存2" url="/ProductStockWS/deleteProductStock2.do"/>
-	</function>
-	
-	<function isApi="1" groupCn="标签价格库存" numberCode="productUserTagManager" nameCn="标签价格库存管理" url="">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160317115000" nameCn="查询标签价格库存" url="/ProductUserTagWS/queryProductUserTagList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160317115001" nameCn="新增标签价格库存" url="/ProductUserTagWS/addProductUserTag.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160317115002" nameCn="编辑标签价格库存" url="/ProductUserTagWS/editProductUserTag.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160317115003" nameCn="删除标签价格库存" url="/ProductUserTagWS/deleteProductUserTag.do"/>
-	
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20160321113201" nameCn="查询标签价格库存日志" url="/ProductUserTagStockWS/queryLogProductUserTagStock.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20160321113202" nameCn="查询标签价格库存管理信息" url="/ProductUserTagStockWS/queryProductForStockList.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20160321113203" nameCn="查询某标签所有库存" url="/ProductUserTagStockWS/queryProductUserTagStockAllList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160321113204" nameCn="新建天标签价格库存" url="/ProductUserTagStockWS/addProductUserTagStock.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160321113205" nameCn="删除标签价格库存1" url="/ProductUserTagStockWS/deleteProductUserTagStock.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160321113206" nameCn="删除标签价格库存2" url="/ProductUserTagStockWS/deleteProductUserTagStock2.do"/>
-	
-	</function>
-	
-	<function isApi="0" groupCn="报表分析" numberCode="OrderContentStat" nameCn="分析--业绩统计" url="/jsp_stat/orderContent_stat.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_hy20160620161601" nameCn="业绩统计" url="/StatWS/statOrderContentForPerformance.do"/>
-	</function>
-	
-	<function isApi="0" groupCn="报表分析" numberCode="OrderContentTrend" nameCn="分析--业绩趋势" url="/jsp_stat/orderContent_trend.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_hy20160620161602" nameCn="业绩趋势" url="/StatWS/statOrderContentForTrend.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_hy20160620161603" nameCn="业绩趋势_excel" url="/StatWS/statOrderContentForExcel.do"/>
-	</function>
-	
-	<function isApi="0" groupCn="客户" numberCode="customerManager" nameCn="客户管理" url="/jsp_buyer/customerManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20151231115900" nameCn="客户查询" url="/CustomerWS/queryCustomerList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20151231115901" nameCn="修改客户信息" url="/CustomerWS/editCustomer.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160216100200" nameCn="重置客户密码" url="/CustomerWS/editCustomerPassword.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160216102000" nameCn="获取客户详细信息" url="/CustomerWS/getCustomer.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20151231115902" nameCn="客户账户状态" url="/CustomerWS/editCustomerEnabled.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160317101901" nameCn="设置客户标签" url="/CustomerWS/setCustomerUserTag.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20160317101902" nameCn="查询客户选中的标签" url="/CustomerWS/queryCustomerUserTagTrueList.do"/>
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20160317101903" nameCn="查询客户位选中标签" url="/CustomerWS/queryCustomerUserTagFalseList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160317101904" nameCn="添加标签进组" url="/CustomerWS/addCustomerUserTag.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160317101905" nameCn="删除组内标签" url="/CustomerWS/deleteCustomerUserTag.do"/>
-	</function>
-	
-	<function isApi="0" groupCn="客户" numberCode="userTagManager" nameCn="客户标签" url="/jsp_buyer/userTagManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_y20160315110900" nameCn="用户标签" url="/UserTagWS/queryUserTagList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_y20160315111001" nameCn="添加标签" url="/UserTagWS/addUserTag.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_y20160315111102" nameCn="编辑标签" url="/UserTagWS/editUserTag.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_y20160315111103" nameCn="删除标签" url="/UserTagWS/deleteUserTag.do"/>
-	</function>
-	<function isApi="0" groupCn="客户" numberCode="weixinUserManager" nameCn="微信客户管理" url="/jsp_buyer/weixinUserManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_w20160526101400" nameCn="微信客户列表" url="/WeixinUserInfoWS/queryWeixinUserInfoList.do"/>
-	</function>
-	
-	<function isApi="0" groupCn="管理员" numberCode="a_userManager" nameCn="用户管理" url="/xyzsecurity/a_userManager.html">
+	<function isApi="0" groupCn="系统配置" numberCode="userManager" nameCn="用户管理" url="/security/userManager.html">
 		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20151214155700" nameCn="查询用户列表" url="/AdminUserWS/queryUserList.do"/>
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20151214155701" nameCn="新增用户" url="/AdminUserWS/addUser.do"/>
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20151214155702" nameCn="编辑用户" url="/AdminUserWS/editUser.do"/>
@@ -209,7 +16,7 @@
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_w20160628120800" nameCn="添加用户手持终端" url="/AdminUserWS/setImeiCode.do"/>
 	</function>
 	
-	<function isApi="0" groupCn="管理员" numberCode="positionManager" nameCn="岗位管理" url="/xyzsecurity/a_positionManager.html">
+	<function isApi="0" groupCn="系统配置" numberCode="positionManager" nameCn="岗位管理" url="/xyzsecurity/a_positionManager.html">
 		<api flagServer="0" isWork="0" buttonCode="buttonCode_y20141231101619" nameCn="查询岗位列表" url="/AdminPositionWS/queryPositionList.do"/>
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_y20141231101619" nameCn="新增岗位" url="/AdminPositionWS/addPosition.do"/>
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_y20141231101619" nameCn="编辑岗位" url="/AdminPositionWS/editPosition.do"/>
@@ -224,26 +31,15 @@
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_y20141231101619" nameCn="删除岗位内操作" url="/AdminPositionWS/deletePositionButton.do"/>
 	</function>
 	
-	<function isApi="0" groupCn="管理员" numberCode="possessorManager" nameCn="机构" url="/xyzsecurity/possessorManager.html">
+	<function isApi="0" groupCn="系统配置" numberCode="possessorManager" nameCn="机构" url="/xyzsecurity/possessorManager.html">
 		<api flagServer="0" isWork="0" buttonCode="buttonCode_x20160718111401" nameCn="查询机构列表" url="/PossessorWS/queryPossessorList.do"/>
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160718111402" nameCn="添加机构" url="/PossessorWS/addPossessor.do"/>
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160718111403" nameCn="修改机构" url="/PossessorWS/editPossessor.do"/>
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160718111404" nameCn="删除机构" url="/PossessorWS/deletePossessor.do"/>
 	</function>
 	
-	<function isApi="0" groupCn="异常" numberCode="exceptionLogManager" nameCn="异常监控" url="/jsp_base/exceptionLogManager.html">
-		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160314104000" nameCn="查询异常信息" url="/ExceptionLogWS/queryExceptionLogList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160314104001" nameCn="新增异常信息" url="/ExceptionLogWS/addExceptionLog.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160427123200" nameCn="确认处理异常信息" url="/ExceptionLogWS/handleExceptionLogOper.do"/>
-	</function>
-	
-	<function isApi="1" groupCn="核销" numberCode="heXiaoManager" nameCn="核销" >
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160630122601" nameCn="PMS核销列表查询" url="/HeXiaoWS/queryPmsHeXiaoOrderContentList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160630122603" nameCn="PMS核销票单" url="/HeXiaoWS/pmsHeXiaoOper.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160630122604" nameCn="核销列表查询" url="/HeXiaoWS/queryHeXiaoOrderContentList.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160630122605" nameCn="核销票单" url="/HeXiaoWS/heXiaoOper.do"/>
-		<api flagServer="0" isWork="1" buttonCode="buttonCode_x20160630122602" nameCn="核销订单详情" url="/HeXiaoWS/getOrderContentByHeXiaoCode.do"/>
-	</function>
+
+
 	
 	<list>
 		<api flagServer="0" isWork="0" nameCn="下拉框--获取指定供应商" url="/ListWS/getProviderList.do"/>
