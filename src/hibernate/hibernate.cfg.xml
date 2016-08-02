@@ -16,6 +16,10 @@
 		<mapping class="xyz.model.security.TokenInfo"></mapping>
 		<mapping class="xyz.model.security.Possessor"></mapping>
 		
+		<!-- 基础数据 -->
+		<mapping class="xyz.model.data.Student"></mapping>
+		<mapping class="xyz.model.data.Lesson"></mapping>
+		
 	</session-factory>
 </hibernate-configuration>
   

@@ -17,11 +17,11 @@ $(document).ready(function(){
 	
 	$("#logoutLink").click(function(){
 		deleteXZTripCookie();
-		location.href="../../login.html";
+		location.href="../login.html";
 	});
 	
 	$("#logoutHeaderLink").click(function(){
 		deleteXZTripCookie();
-		location.href="../../login.html";
+		location.href="../login.html";
 	});
 });

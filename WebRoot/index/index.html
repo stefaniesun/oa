@@ -59,20 +59,20 @@ xyzAjax({
 							html+="</li>";
 						}
 						html+="<li>";
-						html+="		<a href='#'><i class='fa fa-user'></i>";
+						html+="		<a href='#'><i class='fa "+securityFunctionList[i].icon+"'></i>";
 						html+="		<span class='nav-label'>"+securityFunctionList[i].groupCn+"</span><span class='fa arrow'></span>";
 						html+="		</a>";
 						html+="		<ul class='nav nav-second-level collapse' style='height: 0px;'>";
-						html+="		  <li><a class='fa fa-home J_menuItem' href='"+securityFunctionList[i].url+"' >"+securityFunctionList[i].nameCn+"</a></li>";
+						html+="		  <li><a class='J_menuItem' href='../"+securityFunctionList[i].url+"' >"+securityFunctionList[i].nameCn+"</a></li>";
 						
 						menuItem=securityFunctionList[i].groupCn;
 					}else{
-						html+="		  <li><a class='fa fa-home J_menuItem' href='"+securityFunctionList[i].url+"' >"+securityFunctionList[i].nameCn+"</a></li>";
+						html+="		  <li><a class='J_menuItem' href='../"+securityFunctionList[i].url+"' >"+securityFunctionList[i].nameCn+"</a></li>";
 					}
 				}
 			}
 			
-			//$("#homeItem").after(html);
+			$("#homeItem").after(html);
 			
 		}else{
 			layer.alert(data.msg);

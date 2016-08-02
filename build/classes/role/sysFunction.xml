@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
 	
-	<function isApi="0" groupCn="系统配置" icon="" numberCode="userManager" nameCn="用户管理" url="/security/userManager.html">
+	<function isApi="0" groupCn="系统配置" icon="fa-cog" numberCode="userManager" nameCn="用户管理" url="/security/userManager.html">
 		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20151214155700" nameCn="查询用户列表" url="/AdminUserWS/queryUserList.do"/>
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20151214155701" nameCn="新增用户" url="/AdminUserWS/addUser.do"/>
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20151214155702" nameCn="编辑用户" url="/AdminUserWS/editUser.do"/>
@@ -39,6 +39,20 @@
 	</function>
 	
 
+
+	<function isApi="0" groupCn="基础数据" icon="fa-reorder"  numberCode="studentManager" nameCn="学员管理" url="/data/studentManager.html">
+		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160802100800" nameCn="查询学员列表" url="/StudentWS/queryStudentList.do"/>
+		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160802100801" nameCn="添加学员" url="/StudentWS/addStudent.do"/>
+		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160802100802" nameCn="修改学员" url="/StudentWS/editStudent.do"/>
+		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160802100803" nameCn="删除学员" url="/StudentWS/deleteStudent.do"/>
+	</function>
+	
+	<function isApi="0" groupCn="基础数据"   numberCode="lessonManager" nameCn="班次管理" url="/data/lessonManager.html">
+		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20160802151000" nameCn="查询班次列表" url="/LessonWS/queryLessonList.do"/>
+		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160802151001" nameCn="添加班次" url="/LessonWS/addLesson.do"/>
+		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160802151002" nameCn="修改班次" url="/LessonWS/editLesson.do"/>
+		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20160802151003" nameCn="删除班次" url="/LessonWS/deleteLesson.do"/>
+	</function>
 
 	
 	<list>

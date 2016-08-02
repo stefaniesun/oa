@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>西藏旅游数据中心</title>
+<meta name="Keywords" content=""/>
+<meta name="Description" content=""/>
+<link href="../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../css/font-awesome.css" rel="stylesheet"/>
+<link href="../css/animate.css" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<link href="../js/library/bootstrap-table/bootstrap-table.css" rel="stylesheet"/>
+
+<script type="text/javascript" src="../js/library/jquery-1.7.2.js"></script>	
+<script type="text/javascript" src="../js/library/common/common.js"></script>
+<script type="text/javascript" src="../js/library/cookie/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/library/common/cookie.js"></script>
+<script type="text/javascript" src="../js/library/layer/layer.js"></script>	
+<script type="text/javascript" src="../js/library/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/library/bootstrap/js/bootstrap-suggest.min.js"></script>
+<script type="text/javascript" src="../js/library/bootstrap-table/bootstrap-table.min.js"></script>
+<script type="text/javascript" src="../js/library/switchery/switchery.js" ></script>	
+<script type="text/javascript" src="../js/library/common/commonUi.js" defer="defer"></script>
+
+<script type="text/javascript" src="../js/data/studentManager.js" defer="defer"></script>	
+
+</head>
+<body class="gray-bg">
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>用户管理</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row row-lg">
+
+                    <div class="col-sm-12">
+                     
+                     
+                     
+                     <form class="form-inline">
+						  <div class="form-group">
+						    <label>姓名</label>
+						    <input type="text" class="form-control" id="name" />
+						  </div>
+						  <div class="form-group">
+						    <label>电话号码</label>
+						    <input type="text" class="form-control" id="phone" >
+						  </div>
+						  
+						<button id="queryButton" style="float:right" class="btn btn-primary " type="button"><i class="fa fa-search"></i>&nbsp;查询</button>
+						  
+					</form>
+                     
+                     	<table id="studentManagerTable"></table>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

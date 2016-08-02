@@ -91,11 +91,13 @@ public class XmlUtil{
                 String url = node.getAttributeNode("url")==null?null:node.getAttribute("url");
                 String groupCn = node.getAttributeNode("groupCn")==null?null:node.getAttribute("groupCn");
                 String isApi = node.getAttributeNode("isApi")==null?null:node.getAttribute("isApi");
+                String icon = node.getAttributeNode("icon")==null?null:node.getAttribute("icon");
         		SecurityFunction securityFunction = new SecurityFunction();
         		securityFunction.setNumberCode(numberCode);
         		securityFunction.setNameCn(nameCn);
         		securityFunction.setGroupCn(groupCn);
         		securityFunction.setUrl(url);
+        		securityFunction.setIcon(icon);
         		securityFunction.setIsApi(Integer.parseInt(isApi));
                 List<SecurityApi> securityApiList = new ArrayList<SecurityApi>();
                 NodeList nList1 = node.getElementsByTagName("api");               
