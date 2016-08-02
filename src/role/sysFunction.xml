@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
 	
-	<function isApi="0" groupCn="系统配置" numberCode="userManager" nameCn="用户管理" url="/security/userManager.html">
+	<function isApi="0" groupCn="系统配置" icon="" numberCode="userManager" nameCn="用户管理" url="/security/userManager.html">
 		<api flagServer="0" isWork="0" buttonCode="buttonCode_h20151214155700" nameCn="查询用户列表" url="/AdminUserWS/queryUserList.do"/>
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20151214155701" nameCn="新增用户" url="/AdminUserWS/addUser.do"/>
 		<api flagServer="0" isWork="1" buttonCode="buttonCode_h20151214155702" nameCn="编辑用户" url="/AdminUserWS/editUser.do"/>
