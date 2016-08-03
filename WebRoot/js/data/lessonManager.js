@@ -88,7 +88,7 @@ function addLesson(){
 		content: '../data/addLesson.html',
 	    fit:false,
 	    width:'600px',
-	    height:'600px',
+	    height:'660px',
 	    buttons:[{
 			text:'确定',
 			handler:function(){
@@ -97,6 +97,10 @@ function addLesson(){
 		},{
 			text:'取消'
 		}]
+	});
+	
+	laydate({
+	    elem: '#dateInfoForm'
 	});
 
 }

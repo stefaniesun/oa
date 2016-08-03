@@ -16,7 +16,11 @@
 			</div>
 			
 			<div class="input-field">
-				<label>类型：</label><input id="typeForm"  type="text"/>
+				<label>类型：</label> 
+				<select class="form-control m-b" id="typeForm">
+                    <option value="笔试">笔试</option>
+                    <option value="面试">面试</option>
+                  </select>
 			</div>
 			
 			<div class="input-field">
@@ -27,16 +31,33 @@
 				<label>价格：</label><input id="priceForm"  type="text"/>
 			</div>
 			
+			<input id="dateInfoForm" class="laydate-icon"/>
+			
 			<div class="input-field">
-				<label>上课时间：</label><input id="dateInfoForm"  type="text"/>
+				<label>上课时间：</label>
 			</div>
 			
 			<div class="input-field">
-				<label>授课类型：</label><input id="lessonTypeForm"  type="text"/>
+				<label>授课类型：</label>
+				<select class="form-control m-b" id="lessonTypeForm">
+                    <option value="DYA">走读</option>
+                    <option value="NIGHT">封闭包住</option>
+                    <option value="EAT_NIGHT">封闭包吃住</option>
+                  </select>
 			</div>
 			
+			
+			
 			<div class="input-field">
-				<label>是否退费：</label><input id="flagRefundForm"  type="text"/>
+				<label>是否退费：</label>
+		
+				<div class="checkbox checkbox-success">
+                                        <input id="flagRefundForm" type="checkbox">
+                                        <label for="checkbox3">
+                                           
+                                        </label>
+                                    </div>
+                                    
 			</div>
 			
 			<div class="input-field">

@@ -280,6 +280,10 @@ function xyzdialog(d){
 		    	}
 				//执行加载完成后回调
 				if(d.onLoad!=undefined){
+					
+					
+					
+					
 					d.onLoad.call();
 				}
 		     }
