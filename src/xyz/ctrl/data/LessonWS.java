@@ -1,5 +1,7 @@
 package xyz.ctrl.data;
 
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +31,15 @@ public class LessonWS {
 	@RequestMapping(value="addLesson")
 	@ResponseBody
 	public Map<String, Object> addLesson(
+			String year,
+			String type,
 			String name,
-			String phone,
-			String idCard){
-		return lessonSvc.addLesson(name,phone,idCard);
+			BigDecimal price,
+			Date dateInfo,
+			String teachType,
+			int flagRefund,
+			String remark){
+		return lessonSvc.addLesson(year,type,name,price,dateInfo,teachType,flagRefund,remark);
 	}
 	
 	@RequestMapping(value="editLesson")

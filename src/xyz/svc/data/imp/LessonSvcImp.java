@@ -1,5 +1,7 @@
 package xyz.svc.data.imp;
 
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,13 +49,6 @@ public class LessonSvcImp implements LessonSvc {
 	}
 
 	@Override
-	public Map<String, Object> addLesson(String name, String phone,
-			String idCard) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Map<String, Object> editLesson(String numberCode, String name,
 			String phone, String idCard) {
 		// TODO Auto-generated method stub
@@ -64,6 +59,28 @@ public class LessonSvcImp implements LessonSvc {
 	public Map<String, Object> deleteLesson(String numberCode) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Map<String, Object> addLesson(String year, String type,
+			String name, BigDecimal price, Date dateInfo, String teachType,
+			int flagRefund, String remark) {
+		
+		Lesson lesson=new Lesson();
+		
+		lesson.setAddDate(new Date());
+		lesson.setYear(year);
+		lesson.setType(type);
+		lesson.setName(name);
+		lesson.setPrice(price);
+		lesson.setDateInfo(dateInfo);
+		lesson.setTeachType(teachType);
+		lesson.setFlagRefund(flagRefund);
+		lesson.setRemark(remark);
+		
+		commonDao.save(lesson);
+		
+		return ReturnUtil.returnMap(1, null);
 	}
 
 }

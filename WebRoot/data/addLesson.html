@@ -10,7 +10,7 @@
 
 	<div class="col-sm-12">
 	
-		<div class="m">
+		<div class="m" style="margin-bottom:60px">
 			<div class="input-field">
 				<label>年份：</label><input id="yearForm"  type="text" />
 			</div>
@@ -31,15 +31,14 @@
 				<label>价格：</label><input id="priceForm"  type="text"/>
 			</div>
 			
-			<input id="dateInfoForm" class="laydate-icon"/>
-			
 			<div class="input-field">
 				<label>上课时间：</label>
+				<input id="dateInfoForm" class="laydate-icon" onclick="laydate()"/>
 			</div>
 			
 			<div class="input-field">
 				<label>授课类型：</label>
-				<select class="form-control m-b" id="lessonTypeForm">
+				<select class="form-control m-b" id="teachTypeForm">
                     <option value="DYA">走读</option>
                     <option value="NIGHT">封闭包住</option>
                     <option value="EAT_NIGHT">封闭包吃住</option>
@@ -47,17 +46,15 @@
 			</div>
 			
 			
-			
 			<div class="input-field">
 				<label>是否退费：</label>
-		
+
 				<div class="checkbox checkbox-success">
-                                        <input id="flagRefundForm" type="checkbox">
-                                        <label for="checkbox3">
-                                           
-                                        </label>
-                                    </div>
-                                    
+                                        <input id="flagRefundForm" type="checkbox"/>
+                                        <label for="checkbox3"/>
+                    </div>
+
+				
 			</div>
 			
 			<div class="input-field">

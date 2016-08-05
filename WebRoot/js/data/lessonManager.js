@@ -22,20 +22,13 @@ function tableInit(){
 	}
 	if(xyzControlButton("buttonCode_h20151214155702")){
 		toolbar[toolbar.length]={
-				text: '编辑学员',
+				text: '编辑班次',
 				icon: 'fa-edit',
 				iconType:'info',
 				handler: 'editUser()'
 		};
 	}
-	if(xyzControlButton("buttonCode_h20151214155704")){
-		toolbar[toolbar.length]={
-				text: '重设密码',
-				icon: 'fa-lock',
-				iconType:'danger',
-				handler: 'editUserPassword()'
-		};
-	}
+
 	xyzgrid({
 		table : 'lessonManagerTable',
 		url : '../LessonWS/queryLessonList.do',
@@ -45,15 +38,6 @@ function tableInit(){
           {field:'year',title:'年份'},
   		  {field:'type',title:'类型'},
   		  {field:'name',title:'名称'},
-		  {field:'enabled',title:'可用',
-				formatter: function(value,row,index){
-					if (value == 1){
-						return '<input type="checkbox" class="js-switch" onChange="editUserEnabled(\''+row.username+'\')" checked/>';
-					} else {
-						return '<input type="checkbox" class="js-switch" onChange="editUserEnabled(\''+row.username+'\')" />';
-					}
-				}
-		  },
 		  {field:'price',title:'价格'},
 		  {field:'dateInfo',title:'上课时间'},
   		  {field:'addDate',title:'添加时间'},
@@ -88,7 +72,7 @@ function addLesson(){
 		content: '../data/addLesson.html',
 	    fit:false,
 	    width:'600px',
-	    height:'660px',
+	    height:'700px',
 	    buttons:[{
 			text:'确定',
 			handler:function(){
@@ -96,12 +80,13 @@ function addLesson(){
 			}
 		},{
 			text:'取消'
-		}]
+		}],
+		onLoad:function(){
+		
+		}
 	});
 	
-	laydate({
-	    elem: '#dateInfoForm'
-	});
+
 
 }
 
@@ -157,22 +142,32 @@ function editUserEnabled(username){
 
 function addLessonSubmit(){
 	
+	var year = $("#yearForm").val();
+	var type = $("#typeForm").val();
 	var name = $("#nameForm").val();
-	var phone = $("#phoneForm").val();
-	var idCard = $("#idCardForm").val();
-	
+	var price = $("#priceForm").val();
+	var dateInfo = $("#dateInfoForm").val();
+	var teachType = $("#teachTypeForm").val();
+	var flagRefund = $("#flagRefundForm").attr("checked")=="checked"?1:0;
+	var remark = $("#remarkForm").val();
+
 	xyzAjax({
-		url : "../StudentWS/addStudent.do",
+		url : "../LessonWS/addLesson.do",
 		data : {
+			year : year,
+			type : type,
 			name : name,
-			phone : phone,
-			idCard : idCard
+			price : price,
+			dateInfo : dateInfo,
+			teachType : teachType,
+			flagRefund : flagRefund,
+			remark : remark
 		},
 		success : function(data) {
 			if(data.status==1){
-				$('#studentManagerTable').bootstrapTable('refresh');
+				$('#lessonManagerTable').bootstrapTable('refresh');
 				top.layer.msg('操作成功',{img:"check"});
-				layer.close($("#dialog_addStudent").data("index")); 
+				layer.close($("#dialog_addLesson").data("index")); 
 			}else{
 				top.layer.alert(data.msg, {icon: 2});
 			}
