@@ -16,6 +16,7 @@ import xyz.filter.ReturnUtil;
 import xyz.model.data.Lesson;
 import xyz.model.data.Student;
 import xyz.svc.data.LessonSvc;
+import xyz.util.StringUtil;
 
 @Service
 public class LessonSvcImp implements LessonSvc {
@@ -48,37 +49,66 @@ public class LessonSvcImp implements LessonSvc {
 	
 	}
 
-	@Override
-	public Map<String, Object> editLesson(String numberCode, String name,
-			String phone, String idCard) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Map<String, Object> deleteLesson(String numberCode) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Lesson lesson=(Lesson) commonDao.getObjectByUniqueCode("Lesson", "numberCode", numberCode);
+		
+		if(lesson==null){
+			return ReturnUtil.returnMap(0, "对象不存在");
+		}
+		commonDao.delete(lesson);
+		return ReturnUtil.returnMap(1,null);
 	}
 
 	@Override
 	public Map<String, Object> addLesson(String year, String type,
-			String name, BigDecimal price, Date dateInfo, String teachType,
+			String name, BigDecimal price, Date startDate,Date endDate, String teachType,
 			int flagRefund, String remark) {
 		
 		Lesson lesson=new Lesson();
+		
+		lesson.setNumberCode(StringUtil.get_new_numberCode());
+		lesson.setAddDate(new Date());
+		lesson.setYear(year);
+		lesson.setType(type);
+		lesson.setName(name);
+		lesson.setPrice(price);
+		lesson.setStartDate(startDate);
+		lesson.setEndDate(endDate);
+		lesson.setTeachType(teachType);
+		lesson.setFlagRefund(flagRefund);
+		lesson.setRemark(remark);
+		
+		commonDao.save(lesson);
+		
+		return ReturnUtil.returnMap(1, null);
+	}
+
+	@Override
+	public Map<String, Object> editLesson(String numberCode, String year,
+			String type, String name, BigDecimal price, Date startDate,
+			Date endDate, String teachType, int flagRefund, String remark) {
+	
+		Lesson lesson=(Lesson) commonDao.getObjectByUniqueCode("Lesson", "numberCode", numberCode);
+		
+		if(lesson==null){
+			return ReturnUtil.returnMap(0, "对象不存在");
+		}
 		
 		lesson.setAddDate(new Date());
 		lesson.setYear(year);
 		lesson.setType(type);
 		lesson.setName(name);
 		lesson.setPrice(price);
-		lesson.setDateInfo(dateInfo);
+		lesson.setStartDate(startDate);
+		lesson.setEndDate(endDate);
 		lesson.setTeachType(teachType);
 		lesson.setFlagRefund(flagRefund);
 		lesson.setRemark(remark);
 		
-		commonDao.save(lesson);
+		commonDao.update(lesson);
 		
 		return ReturnUtil.returnMap(1, null);
 	}

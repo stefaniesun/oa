@@ -25,7 +25,15 @@ function tableInit(){
 				text: '编辑班次',
 				icon: 'fa-edit',
 				iconType:'info',
-				handler: 'editUser()'
+				handler: 'editLesson()'
+		};
+	}
+	if(xyzControlButton("buttonCode_h20151214155703")){
+		toolbar[toolbar.length]={
+				text: '删除班次',
+				icon: 'fa-close',
+				iconType:'danger',
+				handler: 'deleteLesson()'
 		};
 	}
 
@@ -39,7 +47,12 @@ function tableInit(){
   		  {field:'type',title:'类型'},
   		  {field:'name',title:'名称'},
 		  {field:'price',title:'价格'},
-		  {field:'dateInfo',title:'上课时间'},
+		  {field:'dateInfo',title:'上课时间',
+				formatter: function(value,row,index){
+					return row.startDate.substring(0,10)+'&nbsp;&nbsp;-&nbsp;&nbsp;'+row.endDate.substring(0,10);
+				}
+		  },
+		  {field:'remark',title:'说明'},
   		  {field:'addDate',title:'添加时间'},
   		  {field:'temp',title:'设置资源组',width:'90px',
 				formatter: function(value,row,index){
@@ -91,54 +104,44 @@ function addLesson(){
 }
 
 
-function editUser(){
+function editLesson(){
 	
-	var users=$('#userManagerTable').bootstrapTable('getSelections');
+	var lessons=$('#lessonManagerTable').bootstrapTable('getSelections');
 
-	if(users.length != 1){
+	if(lessons.length != 1){
 		top.layer.msg('请先选中单个对象',{img: "warning"});
 		return;
 	}
 	
-	var row = users[0];
+	var row = lessons[0];
 	
 	xyzdialog({
-		id : 'dialog_editUser',
-		title : '新增用户',
-		content: '../security/editUser.html',
+		id : 'dialog_editLesson',
+		title : '编辑班次',
+		content: '../data/editLesson.html',
 	    fit:false,
 	    width:'600px',
-	    height:'400px',
+	    height:'700px',
 	    buttons:[{
 			text:'确定',
 			handler:function(){
-				editUserSubmit();
+				editLessonSubmit(row.numberCode);
 			}
 		},{
 			text:'取消'
 		}],
 		onLoad:function(){
-			$("#usernameForm").val(row.username);
-			$("#nickNameForm").val(row.nickName);
+			$("#yearForm").val(row.year);
+			$("#nameForm").val(row.name);
+			$("#priceForm").val(row.price);
+			$("#remarkForm").val(row.remark);
+			$("#startDateForm").val(row.startDate.substring(0,10));
+			$("#endDateForm").val(row.endDate.substring(0,10));
 		}
 	});
 }
 
-function editUserEnabled(username){
-	xyzAjax({
-		url : "../AdminUserWS/editUserEnabled.do",
-		data : {
-			username : username
-		},
-		success : function(data) {
-			if(data.status==1){
-				top.layer.msg('操作成功',{img:"check"});
-			}else{
-				top.layer.alert(data.msg, {icon: 2});
-			}
-		}
-	});
-}
+
 
 function addLessonSubmit(){
 	
@@ -146,7 +149,8 @@ function addLessonSubmit(){
 	var type = $("#typeForm").val();
 	var name = $("#nameForm").val();
 	var price = $("#priceForm").val();
-	var dateInfo = $("#dateInfoForm").val();
+	var startDate = $("#startDateForm").val();
+	var endDate = $("#endDateForm").val();
 	var teachType = $("#teachTypeForm").val();
 	var flagRefund = $("#flagRefundForm").attr("checked")=="checked"?1:0;
 	var remark = $("#remarkForm").val();
@@ -158,7 +162,8 @@ function addLessonSubmit(){
 			type : type,
 			name : name,
 			price : price,
-			dateInfo : dateInfo,
+			startDate : startDate,
+			endDate : endDate,
 			teachType : teachType,
 			flagRefund : flagRefund,
 			remark : remark
@@ -177,22 +182,37 @@ function addLessonSubmit(){
 }
 
 
-function editUserSubmit(){
+function editLessonSubmit(numberCode){
 	
-	var username = $("#usernameForm").val();
-	var nickName = $("#nickNameForm").val();
+	var year = $("#yearForm").val();
+	var type = $("#typeForm").val();
+	var name = $("#nameForm").val();
+	var price = $("#priceForm").val();
+	var startDate = $("#startDateForm").val();
+	var endDate = $("#endDateForm").val();
+	var teachType = $("#teachTypeForm").val();
+	var flagRefund = $("#flagRefundForm").attr("checked")=="checked"?1:0;
+	var remark = $("#remarkForm").val();
 	
 	xyzAjax({
-		url : "../AdminUserWS/editUser.do",
+		url : "../LessonWS/editLesson.do",
 		data : {
-			username : username,
-			nickName : nickName
+			numberCode : numberCode,
+			year : year,
+			type : type,
+			name : name,
+			price : price,
+			startDate : startDate,
+			endDate : endDate,
+			teachType : teachType,
+			flagRefund : flagRefund,
+			remark : remark
 		},
 		success : function(data) {
 			if(data.status==1){
-				$('#userManagerTable').bootstrapTable('refresh');
-				top.layer.msg('操作成功',{img:'check'});
-				layer.close($("#dialog_addUser").data("index")); 
+				$('#lessonManagerTable').bootstrapTable('refresh');
+				top.layer.msg('操作成功',{img:"check"});
+				layer.close($("#dialog_editLesson").data("index")); 
 			}else{
 				top.layer.alert(data.msg, {icon: 2});
 			}
@@ -201,66 +221,34 @@ function editUserSubmit(){
 
 }
 
-function editUserPassword(){
-	var users=$('#userManagerTable').bootstrapTable('getSelections');
+function deleteLesson(){
+	var lessons=$('#lessonManagerTable').bootstrapTable('getSelections');
 
-	if(users.length != 1){
+	if(lessons.length != 1){
 		top.layer.msg('请先选中单个对象',{img: "warning"});
 		return;
 	}
 	
-	var row = users[0];
+	var row = lessons[0];
 	
-	xyzdialog({
-		id : 'dialog_editUserPassword',
-		title : '重设密码',
-		content: '../security/editUserPassword.html',
-	    fit:false,
-	    width:'600px',
-	    height:'400px',
-	    buttons:[{
-			text:'确定',
-			handler:function(){
-				editUserPasswordSubmit();
-			}
-		},{
-			text:'取消'
-		}],
-		onLoad:function(){
-			$("#usernameForm").val(row.username);
-			$("#nickNameForm").val(row.nickName);
-		}
-	});
-}
-	
-function editUserPasswordSubmit(){
-	
-	var username = $("#usernameForm").val();
-	var password = $("#passwordForm").val();
-	var confirmPassword = $("#confirmPasswordForm").val();
-	
-	if(password!=confirmPassword){
-		layer.tips('两次输入的密码不一致', '#passwordForm');
-		return;
-	}
-	
-	password=$.md5(password).substr(8,16);
-	
-	xyzAjax({
-		url : "../AdminUserWS/editUserPassword.do",
-		data : {
-			username : username,
-			password : password
-		},
-		success : function(data) {
-			if(data.status==1){
-				$('#userManagerTable').bootstrapTable('refresh');
-				top.layer.msg('操作成功',{img:'check'});
-				layer.close($("#dialog_editUserPassword").data("index"));
-			}else{
-				top.layer.alert(data.msg, {icon: 2});
-			}
-		}
-	});
+	top.layer.confirm('确定删除班次？', {
+		  btn: ['确定','取消'] //按钮
+		}, function(index){
+			xyzAjax({
+				url : "../LessonWS/deleteLesson.do",
+				data : {
+					numberCode : row.numberCode
+				},
+				success : function(data) {
+					if(data.status==1){
+						$('#lessonManagerTable').bootstrapTable('refresh');
+						top.layer.msg('删除成功',{img:'check'});
+					}else{
+						top.layer.alert(data.msg, {icon: 2});
+					}
+				}
+			});
+			layer.close(index);
+		});
 }
 

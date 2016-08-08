@@ -40,8 +40,11 @@ public class Lesson {
 	@Column(name="price")
 	private BigDecimal price;//价格
 	
-	@Column(name="date_info")
-	private Date dateInfo;//上课时间
+	@Column(name="start_date")
+	private Date startDate;//上课开始时间
+	
+	@Column(name="end_date")
+	private Date endDate;//上课结束时间
 	
 	@Column(name="teach_type")
 	private String teachType;//授课类型  
@@ -103,14 +106,6 @@ public class Lesson {
 		this.price = price;
 	}
 
-	public Date getDateInfo() {
-		return dateInfo;
-	}
-
-	public void setDateInfo(Date dateInfo) {
-		this.dateInfo = dateInfo;
-	}
-
 	public String getTeachType() {
 		return teachType;
 	}
@@ -141,6 +136,22 @@ public class Lesson {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 	
 }

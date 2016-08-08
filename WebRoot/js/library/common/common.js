@@ -152,3 +152,31 @@ function xyzGetFullUrl(url){
 	var targetServer = window.location.protocol+"//"+window.location.hostname+port+(window.location.pathname.indexOf('/xztrip')==0?'/xztrip/':'/');
 	return targetServer+url;
 };
+function validateForm(){
+	
+	var flag=true;
+	 $(".validateForm input[validate]").each(function(){
+			var options=xyzJsonToObject($(this).attr("validate"));
+			//非空验证
+			if(!xyzIsNull(options.required)){
+				if(xyzIsNull($(this).val())){
+					layer.tips('不能为空', '#'+$(this).attr("id"));
+					$(this).focus();
+					flag=false;
+					return false;
+				}
+			}
+			//数字验证
+			if(!xyzIsNull(options.number)){
+				 if(!/^\d+(?=\.{0,1}\d+$|$)/.test($(this).val())){
+						layer.tips('非法数字', '#'+$(this).attr("id"));
+						$(this).focus();
+						flag=false;
+						return false;
+				 }
+			}
+	 });
+	 
+	 
+	 return flag;
+}

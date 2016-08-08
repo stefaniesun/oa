@@ -35,21 +35,28 @@ public class LessonWS {
 			String type,
 			String name,
 			BigDecimal price,
-			Date dateInfo,
+			Date startDate,
+			Date endDate,
 			String teachType,
 			int flagRefund,
 			String remark){
-		return lessonSvc.addLesson(year,type,name,price,dateInfo,teachType,flagRefund,remark);
+		return lessonSvc.addLesson(year,type,name,price,startDate,endDate,teachType,flagRefund,remark);
 	}
 	
 	@RequestMapping(value="editLesson")
 	@ResponseBody
 	public Map<String, Object> editLesson(
 			String numberCode,
+			String year,
+			String type,
 			String name,
-			String phone,
-			String idCard){
-		return lessonSvc.editLesson(numberCode,name,phone,idCard);
+			BigDecimal price,
+			Date startDate,
+			Date endDate,
+			String teachType,
+			int flagRefund,
+			String remark){
+		return lessonSvc.editLesson(numberCode,year,type,name,price,startDate,endDate,teachType,flagRefund,remark);
 	}
 	
 	@RequestMapping(value="deleteLesson")
